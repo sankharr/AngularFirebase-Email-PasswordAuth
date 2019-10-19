@@ -48,4 +48,26 @@ export class AuthService {
         role: 'network user'
       })  
     }
+
+    logout(){
+      return this.afAuth.auth.signOut();
+    }
+
+    getUserState(){
+      return this.afAuth.authState;
+    }
+
+    login(email: string, password: string){
+
+      this.afAuth.auth.signInWithEmailAndPassword(email,password)
+      .catch(error => {
+        this.eventAuthError.next(error); 
+      })
+      .then(userCredential => {
+        if(userCredential) {
+          this.router.navigate(['/home']);
+        }
+      })
+    }
+
 }
