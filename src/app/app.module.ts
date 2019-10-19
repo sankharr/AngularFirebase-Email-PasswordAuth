@@ -8,9 +8,15 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { RegistrationComponent } from './auth/registration/registration.component';
+import { LoginComponent } from './auth/login/login.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RegistrationComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
